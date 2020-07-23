@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>HTML Table</title>
+      <style>
+		.content {
+		  display: grid;
+		  background-color: #f0f2f5;
+		  height: 100vh;
+		  place-items: center;
+		}
+		form{
+			text-align: right;
+			border: 1px solid;
+			padding: 20px;
+		}
+		form  { display: table;    }
+		.ele { display: table-row; height: 40px; }
+		.elex { display: table-row; height: 40px; }
+		.ele label { display: table-cell; }
+		.elex label { display: block; text-align: left }
+		.ele input { display: table-cell;width:150px;margin-left: 10px;}
+		.ele select { display: table-cell;width:150px;margin-left: 10px;}
+		.elex select { display: table-cell;width:150px;margin-left: 10px}
+	
+	 </style>
+   </head>
+   <body>
+   	<div class="content">
+   		<h2><u>Sample Survey Form</u></h2>
+	   <form >
+		   <p style="font-size:20px"><i style="text-align:left;color:#ff0000;">Help us in filling the form to improve our self</i> &#128540;</p>
+	   	   <hr style="display: block;	">
+	   		<div class="ele">
+		   		<label for="name">* Name</label>
+		   		<input type="text" name="name" placeholder="Enter your name">
+	   		</div>
+	   		<div class="ele">
+		   		<label for="email">* Email</label>
+		   		<input type="text" name="email" placeholder="Enter your Email">
+	   		</div>
+	   		<div class="ele">
+		   		<label for="age">* Age</label>
+		   		<input type="number" name="age" >
+	   		</div>
+	   		<div class="ele">
+		   		<label for="role">* Which option best describes your current role?</label>
+		   		<select id="role" name="role">
+				  <option value="stud">Student</option>
+				  <option value="teach">Teacher</option>
+				  <option value="work">Working Professional</option>
+				  <option value="bus">Business</option>
+				</select>
+	   		</div>
+	   		<div class="elex" >
+			      <label for="age">* How likely is that you would recommend freeCodeCamp to a friend?</label>
+			      
+				  <label for="def">
+					<input type="radio" id="def" name="rate" value="def">
+				  Definitely</label>
+
+				  <label for="maybe">
+					<input type="radio" id="maybe" name="rate" value="maybe">Maybe</label>
+				  
+				  <label for="notsure">
+					<input type="radio" id="notsure" name="rate" value="notsure">Not Sure</label>
+			</div>
+	   		<div class="ele">
+		   		<label for="like">* What do you like most in FCC</label>
+		   		<select id="like" name="like">
+				  <option value="stud">Tutoring Style</option>
+				  <option value="teach">Content</option>
+				</select>
+	   		</div>
+	   		
+	   		<div class="elex">
+		   		<label for="checkbox">Things that should be improved in the future(Check all that apply):</label>
+		   		  <label for="front">
+					<input type="checkbox" id="front" name="front">
+		   		  Front-end Projects</label>
+				  <br>
+				  
+				  <label for="back">
+					<input type="checkbox" id="back" name="back">
+				  Back-end Projects</label>
+				  
+				  <label for="dataviz">
+					<input type="checkbox" id="dataviz" name="dataviz">
+				  Data Visualization</label>
+	   		</div>
+	   		
+	   		<div class="ele">
+				<input type="submit" name="Submit">		  
+	   		</div>
+	   </form>
+	  </div>
+   </body>
+</html>
