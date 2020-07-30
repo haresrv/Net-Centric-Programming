@@ -1,0 +1,29 @@
+body
+{
+	width:95%;
+	
+}
+
+#nav_menu a {
+	font-weight: normal;
+}
+#nav_menu ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+#nav_menu ul li {
+	float: left;
+	width: 10%;
+	border:thin solid;
+	border-width:0px thin;
+}
+#nav_menu ul li a {
+	display: block;
+	text-align: center;
+	padding: 1em 0;
+	text-decoration: none;
+	background-color: white;
+	color: black;
+}

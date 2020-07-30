@@ -1,0 +1,54 @@
+body
+{
+	background:linear-gradient(45deg, white 0%, orange 75%, black 100%);
+	font-family: Arial;
+	width:95%;
+	margin:0 auto;
+	border:3px solid;
+}
+
+div
+{
+	background:#ffffff;
+}
+
+header
+{
+	display:block;
+	border:2px solid;
+	padding:5px;
+	
+}
+
+header img
+{
+	float:left;
+	max-width:10%;
+}
+
+header h2
+{
+	font-size:35px;
+}
+
+.welcome::first-letter {
+	font-size:200%;
+
+}
+
+.center
+{
+	border:2px solid;
+	padding:10px;
+}
+
+a:link {
+  color: orange;
+}
+
+footer
+{
+	text-align: center;
+	background:linear-gradient(45deg, white 0%, orange 75%, black 100%);
+	padding:5px;
+}
