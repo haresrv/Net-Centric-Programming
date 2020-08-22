@@ -1,0 +1,62 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>JS</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	
+var inputCelsius  = prompt("Enter Temp in 'C");;
+var outputFahrenheit = (inputCelsius * 9)/5 + 32;
+alert(inputCelsius + '\u00B0 Celsious is ' + outputFahrenheit + '\u00B0 Fahrenheit');
+console.log(inputCelsius + '\u00B0 Celsious is ' + outputFahrenheit + '\u00B0 Fahrenheit');
+
+var inputFahrenheit  = prompt("Enter Temp in 'F");
+var outputCelsius = (inputFahrenheit - 32)/9 * 5;
+alert(inputFahrenheit + '\u00B0 Fahrenheit is ' + outputCelsius + '\u00B0 Celsious.');
+console.log(inputFahrenheit + '\u00B0 Fahrenheit is ' + outputCelsius + '\u00B0 Celsious.');
+</script>
+</html> -->
+<!DOCTYPE html> 
+<html>
+   <head>
+      <title> NCP </title>
+   </head>
+   <body style="text-align:center;" >
+      <h1 style="color:green;">   Qn-3   </h1>
+      <input oninput="clearinput()" type='text' id='id'/> 
+      <br> <br> 
+      <button onclick="convertC()"> Convert to &deg; C</button> 
+      <button onclick="convertF()"> Convert to &deg; F</button> 
+      
+      <p id="ans" style="color:green;  
+         font-size: 20px; 
+         font-weight: bold;"> 
+      </p>
+      
+      <script> 
+         var el_down = document.getElementById("ans"); 
+         var input = document.getElementById("id"); 
+         var output = ""
+         function convertC() { 
+             output = (input.value -32)/9*5;
+             el_down.innerHTML =  
+                    "Value = "+ output + "\u00B0 Celsious."; 
+         }
+           
+         function convertF() { 
+             output = (input.value * 9)/5 + 32;
+             el_down.innerHTML =  
+                    "Value = "+ output + "\u00B0 Fahrenheit"; 
+         }
+         function clearinput() { 
+             console.log("jehe")
+             output=""
+             el_down.innerHTML = ""; 
+         } 
+         
+      </script> 
+   </body>
+</html>

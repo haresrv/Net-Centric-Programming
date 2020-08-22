@@ -1,0 +1,118 @@
+<style>
+
+#dig
+{
+	background-color:#000;
+}
+
+#clock{
+  color: #66ff99;
+  border: 2px solid #fff;
+  font-size: 30px;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+#date
+{	
+  color: #66ff99;
+  text-align: right;
+  padding:2px;
+  margin-right:10px;
+}
+
+#day
+{	
+  color: #66ff99;
+  text-align: right;
+  padding:2px;
+  margin-right:10px;
+}
+</style>
+
+<p style="color: green">
+	QN-1
+</p>
+
+<input type=text id='ch' placeholder="Add Chapter">
+<input type=numeric id='pg' placeholder="Add Page">
+
+<input type=button onClick="add()" value="Add Chapter">
+<input type=button onClick="disp()" value="Display Index">
+
+<p style="color: green">
+	QN-2
+</p>
+<section id="dig">
+<div id="day"></div>
+<div id="clock"></div>
+<div id="date"></div>
+</section>
+
+<script>
+var x = []
+function add()
+{
+	var ch = document.getElementById('ch').value
+    var pg = document.getElementById('pg').value
+    x.push([ch,pg])
+    
+}
+
+function disp()
+{
+	var str = '<table>'
+	for(var i=0;i<x.length;i++)
+    {
+    	str+='<tr><td>'
+ 		str+=x[i][0]+" "
+        str+='. '.repeat(33-x[i][0].length)
+        str+='</td><td>'
+        str+=x[i][1]
+        str+='</td></tr>'
+    }
+    str+='</table>'
+    document.write(str)
+}
+
+
+function currentTime() {
+  var date = new Date();
+  var hour = date.getHours();
+  var min = date.getMinutes();
+  var sec = date.getSeconds();
+  hour = change(hour);
+  min = change(min);
+  sec = change(sec);
+  var h = ['Mon','Tues','Wednes','Thurs','Fri','Satur','Sun']
+  document.getElementById("day").innerText = h[date.getUTCDay()-1]+"day"; 
+  document.getElementById("clock").innerText = hour + " : " + min + " : " + sec; 
+  document.getElementById("date").innerText = date.toLocaleDateString() 
+  var t = setTimeout(function(){ currentTime() }, 1000);
+}
+
+function change(n) {
+  if (n < 10) 
+    return "0" + n;
+  else 
+    return n;
+}
+
+currentTime(); 
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
