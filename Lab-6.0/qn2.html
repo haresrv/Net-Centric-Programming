@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function validateForm() {
+  var x = document.forms["myForm"]["fname"].value;
+  if (x == "") {
+    alert("Name must be filled out");
+    return false;
+  }
+  if(validate_dropdown1()==false)
+  	return false;
+  else  if(multisel()==false)
+  	return false;
+  else	if(displayRadioValue()==false)
+  	return false;
+  else 
+    return CheckPassword();
+    
+}
+
+function validate_dropdown1()
+{
+
+  var dropdown = document.getElementById('age_group');
+  var age_group_info=document.getElementById("age_group_info")
+
+  if(dropdown.selectedIndex==0)
+  {
+    alert("Please select Age Group");
+    age_group_info.innerHTML="Select your Age Group";
+    dropdown.focus();
+    return false;
+  }
+
+  else
+  {
+    age_group_info.innerHTML="You have selected "+dropdown[dropdown.selectedIndex].text+" as your Age Group";
+    return true;
+  }
+ 
+}
+
+
+function multisel()
+{
+	var selected = [];
+    for (var option of document.getElementById('cars').options) 
+    {
+     if (option.selected) 
+     {
+        selected.push(option.value);
+     }
+    }
+    if(selected.length==0)
+    {
+    	alert("You have to select a car");
+    	return false;
+    }
+    else
+    {
+    	car_info.innerHTML="Selected Cars-->"+selected;	
+        return true;
+    }
+}
+
+function checkerbox()
+{
+	 ele = document.getElementById("checkbox")
+     if(!ele.checked)
+    {
+    	alert('You must agree to the terms first.');
+    	return false;
+	}
+    else
+    	return true;
+}
+
+function displayRadioValue() { 
+            var ele = document.getElementsByName('gender'); 
+            var b = false;  
+            for(i = 0; i < ele.length; i++) { 
+                if(ele[i].checked) 
+                	{
+                    	document.getElementById("result").innerHTML= "Gender: "+ele[i].value; 
+                        b=true;
+                    }
+            }
+    if(!b)
+    	alert("Specify your gender")
+	return b;
+        
+} 
+
+function CheckPassword() {
+	var inputtxt = document.getElementById("pass")
+    var decimal = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
+    if (inputtxt.value.match(decimal)) {
+        alert('Correct, Good to go')
+        return true;
+    } 
+    else 
+    {
+        alert('Pls do the bare minimum stuff...!')
+        return false;
+    }
+}
+
+</script>
+
+</head>
+
+<body>
+
+<form name="myForm" onsubmit="return validateForm()">
+
+  Input a-: <input type="text" placeholder="Only '-' and alphanumeric allowed" pattern="^[A-Za-z0-9-]+$" name="fname" required>
+  <br>
+  Input b-:
+  
+<select name="age_group" id="age_group" required>
+  <option value="0" selected>Single Dropdown for Age</option>
+  <option value="1">1-20</option>
+  <option value="2">21-35</option>
+  <option value="3">36-55</option>
+</select> 
+ 
+<p id="age_group_info" style="color: red;"></p>
+ 
+ 		
+ 
+<select name="cars" id="cars" multiple size=4 required>
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="opel">Opel</option>
+  <option value="audi">Audi</option>
+</select>
+
+<p id="car_info" style="color: red;"></p>
+
+<input type="checkbox" id="checkbox" >Are u Sure?
+<br>
+
+<div>
+Gender:<br>
+<input type="radio" name="gender" value="Male">Male <br>
+<input type="radio" name="gender" value="Female">Female <br>
+<input type="radio" name="gender" value="Others">Others <br>
+<p id="result" style="color: red;"></p>
+
+</div>
+
+<input type="password" id="pass" placeholder="Enter Strong pass" required/>
+<br>
+<input type="text" id="date" placeholder="dd/mm/yyyy" pattern="^(?:(?:31(\/)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/)(?:0?[13-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})$" required/>
+<br>
+<input type="text" id="time" placeholder="hh:mm" pattern="^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$" required/>
+<br>
+<input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
