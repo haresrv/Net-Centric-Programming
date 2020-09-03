@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script >
+  // var topics = ["Finish NCP Evaluation","Upload NCP Assignment to Teams"]
+  // var Deadline = ["3.00 PM","4.00 PM"]
+  var topics = []
+  var Deadline = []
+
+  function validate()
+  {
+    var x = document.getElementById("ipdate").value
+    var time = document.getElementById("iptime").value
+    var topic = document.getElementById("Input").value
+    // console.log(x)
+    // console.log(compare_dates(new Date(),new Date(x)))
+    if(x=="")
+    {
+      document.getElementById("validation").innerHTML = "Enter valid date"
+      return false;
+    }
+    else
+    {
+      document.getElementById("validation").innerHTML = ""
+      topics.push(topic);
+      Deadline.push(time);
+
+      if(compare_dates(new Date(),new Date(x)))
+      {
+
+        var htmlx = ""
+        console.log(topics)
+        console.log(Deadline)   
+        for(var i=0;i<topics.length;i++)
+        {
+          htmlx+="<tr><td>"+topics[i]+"</td><td>"+Deadline[i]+"</td><td><input type='checkbox'/></td></tr>"
+        }
+        document.getElementById("tbodyx").innerHTML = htmlx 
+        return false;
+      }
+      else
+      {
+        document.getElementById("validation").innerHTML = "You can only make entry for tomorrow"
+        return false;
+      } 
+    }
+  }  
+
+  var compare_dates = function(date1,date2){
+   if (date1<date2) return (true);
+   else return (false);
+  }
+
+</script>
+
+  <title>HareSRV</title>
+  <link href="main.css" rel="stylesheet">
+
+</head>
+
+
+
+<body>
+
+<div class="mobile">
+  <header>
+    <h2 class="tc">Welcome to Personal Page</h2>
+    <section class="pom card" style="color:black;">
+
+      <img src="photo2.png" alt="haresrv">
+      <br>
+      <h2>I'm an undergraduate student of CSE background from Amrita School of Engineering, Coimbatore ...</h2>
+      <h7>Feel free to reach out to me for collaboration on projects .... </h7>
+    </section>
+  </header>
+
+
+  <section class="result card">
+
+    <h2>About Me</h2>
+    <p class="subtitle">A budding engineer, who offers a strong work
+ethic, well disposed attitude, and a drive to learn, looking to leverage my skill set for mutual growth at personal
+and organizational levels.</p>
+    <div class="team current">
+      <img src="academic.jpeg" alt="clg">
+      <span><a href="HareSankaranRV.pdf" target="_blank">Academic Profile</a></span>
+      <div class="year">
+        <div class="start">Amrita , Coimbatore Campus</div>
+        <div class="end">(2017-2021)</div>
+      </div>
+    </div>
+    <hr style="padding: 2px;margin:5px;">
+    <div class="team earlier">
+      <img src="school.webp" alt="school">
+      <span><a href="https://github.com/haresrv" target="_blank">Non-Academic Profile</a></span>
+      <div class="year">
+        <div class="start">Hometown</div>
+        <div class="end">(Neyveli)</div>
+      </div>
+    </div>
+
+  </section>
+
+
+  <section class="live">
+     <menu class="card">
+       <button class="active">Add an item to Todo-List</button>
+     </menu>
+
+
+    <div class="btn">
+      <div class="inputbox">
+        <form name="myForm" onsubmit="return validate()">
+
+          <input id="Input" type="text" placeholder="I have to..." minlength="3" maxlength="27" required>
+          <input id="ipdate" type="date" required>
+          <input id="iptime" type="time" required>
+          <input type="submit" value="Add new item"></button>
+          <br>
+          <p id="validation" style="color: red;"></p>
+
+        </form>        
+      </div>
+    </div>
+
+
+
+    <menu class="card" style="margin-top: 20px;">
+      <button class="active">Todo-List</button>
+    </menu>
+
+    <table class="card">
+      <thead>
+        <tr>
+          <th>Topic</th>
+          <th>Deadline</th>
+          <th>Mark as Completed</th>
+        </tr>
+      </thead>
+      <tbody id="tbodyx">
+        <!-- <tr>
+          <td>Finish NCP Evaluation</td>
+          <td>3.00 PM</td>
+          <td><input type="checkbox"/></td>
+        </tr>
+        <tr>
+          <td>Upload NCP Assignment to Teams</td>
+          <td>4.00 PM</td>
+          <td><input type="checkbox"/></td>
+        </tr> -->
+      </tbody>
+
+    </table>
+  </section>
+
+
+<div style="padding:10px;clear:both;background-color:#EDEBD5;margin:0 auto;text-align:center;">
+      <p>
+          You can reach out to me on <a href="https://twitter.com/itz_srv">Twitter</a> or <br> call me at +91-9486325711 or<br> e-mail <a href="mailto:haresrv2000@gmail.com">haresrv2000@gmail.com</a>
+    </p>
+  </div>
+
+  <footer style="text-align:center">
+        <p>Copyrights Reserved @2020</p>  
+  </footer>
+</div>
+  
+</body>
+
+</html>
+
+

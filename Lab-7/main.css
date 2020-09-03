@@ -1,0 +1,207 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.mobile {
+  border: 1px solid #eee;
+  border-radius: 2rem;
+  margin: 1rem auto;
+  min-width: 60em;
+  max-width: 1000px;  
+  font-family: sans-serif;
+  overflow: hidden;
+}
+
+section {
+  margin: 1.5rem 1.5rem;
+}
+
+h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+.tc
+{
+  padding-top: 5px;
+  text-align: center;
+}
+header {
+  background-color: #064dbb;
+  color: white;
+  height: 12rem;
+}
+
+.card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0px 12px 18px 0 rgba(200, 200, 200, 0.6);
+}
+
+.result {
+  
+  padding: 1rem 1.5rem;
+}
+
+.result .subtitle {
+  margin-bottom: 1rem;
+}
+
+.team {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+}
+
+.team img {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 9999px;
+  margin-right: 0.5rem;
+}
+
+.team span
+{
+  margin-left:5%;
+}
+
+.current {
+  color: black;
+}
+
+.earlier {
+  color: #666;
+}
+
+.year {
+  margin-left: auto;
+  text-align: right;
+}
+
+.end {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.vs {
+  text-align: center;
+}
+
+.result p:last-child {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 1rem;
+}
+
+menu {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-bottom: 1.5rem;
+}
+
+menu button {
+  border: none;
+  background: white;
+  padding: 1.5rem 1rem;
+  font-size: 1.2rem;
+}
+
+menu button.active {
+  color: #064dbb;
+  border-bottom: 4px solid #064dbb;
+}
+
+table {
+  text-align: right;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+thead {
+  color: black;
+}
+
+tbody {
+  color: #666;
+}
+
+tbody tr {
+  background-color: #f2f2f2;
+}
+
+tbody tr:nth-child(2n + 1) {
+  background: linear-gradient(to bottom, #f2f2f2, white 70%, white);
+}
+
+th,
+td {
+  padding: 1rem 0.25rem;
+}
+
+thead th:first-child,
+tbody td:first-child {
+  text-align: left;
+  padding-left: 1.5rem;
+}
+
+tbody td:first-child {
+  color: #064dbb;
+  font-weight: 500;
+}
+
+thead th:last-child
+{
+  text-align: center;
+}
+tbody td:last-child
+{
+  text-align: center;
+}
+
+thead th:last-child,
+tbody td:last-child {
+  padding-right: 1.5rem;
+}
+
+th,
+td {
+  padding: 1rem 0.25rem;
+}
+
+.pom {
+  overflow: visible;
+  margin: 1rem 1.5rem;
+  padding: 1rem 1.5rem;
+  width: auto;
+  position: relative;
+  height: 10rem;
+}
+
+.pom img {
+  position: absolute;
+  bottom: 0;
+  left: 1rem;
+  height: 11rem;
+}
+
+.pom h2{
+  color: black;
+  position: relative;
+  left: 12%;
+  width: 500px;
+}
+.pom h7
+{
+  color: black;
+  position: relative;
+  left: 20%;
+  width: 500px;
+  font-weight: normal;
+}
+
+.pom .name {
+  font-size: 1.25rem;
+}
