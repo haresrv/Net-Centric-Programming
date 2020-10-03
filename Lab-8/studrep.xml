@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:xsdstudent 
+xmlns:tns="http://www.example.org/studentreportXMLSchema" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.example.org/studentreportXMLSchema studentreportXMLSchema.xsd ">
+  <tns:Name>Abinaya</tns:Name>
+  <tns:id>30082084</tns:id>
+  <tns:study year="2000">
+    <tns:courses>
+      <tns:course>
+        <tns:name>Computer Networks</tns:name>
+        <tns:shortform>CN</tns:shortform>
+        <tns:report>
+          <tns:grade>A+</tns:grade>
+        </tns:report>
+      </tns:course>
+    </tns:courses>
+  </tns:study>
+</tns:xsdstudent>

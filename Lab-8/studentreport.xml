@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE studentreport SYSTEM "studentreport.dtd">
+<student>
+	<Name>Abinaya</Name>
+	<id>30082084</id>
+	<study>
+		<courses year="2000">
+			<course>
+				<name> Computer Networks </name>
+				<shortform>CN</shortform>
+				<report>
+					<grade>A+</grade>
+					<date>2020-07-01</date>
+				</report>
+			</course>
+			<course>
+				<name>Theory of Computation</name>
+				<shortform>TOC</shortform>
+			</course>
+		</courses>
+	</study>
+</student>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:xsdemail 
+xmlns:tns="http://www.example.org/studentreportXMLSchema" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.example.org/studentreportXMLSchema emailXMLSchema.xsd ">
+  <tns:from>abc@gmail.com </tns:from>
+  <tns:to>xyz@gmail.com</tns:to>
+  <tns:content>
+    <tns:exercises>
+      <tns:exercise>
+        <tns:topic>DTD</tns:topic>
+        <tns:description>From Instance to DTD</tns:description>
+      </tns:exercise>
+      <tns:exercise>
+        <tns:topic>XSD</tns:topic>
+        <tns:description>From Instance to Schema</tns:description>
+      </tns:exercise>
+    </tns:exercises>
+    Best Regards,
+    <tns:person>tns:person</tns:person>
+  </tns:content>
+</tns:xsdemail>
