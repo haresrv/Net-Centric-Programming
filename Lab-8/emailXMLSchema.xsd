@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+ targetNamespace="http://www.example.org/studentreportXMLSchema" 
+ xmlns:tns="http://www.example.org/studentreportXMLSchema" 
+ elementFormDefault="qualified">
+
+<complexType name="emailType">
+	<sequence>
+		<element name="from" type="tns:email"></element>
+		<element name="to" type="tns:email"></element>
+		<element name="content" type="tns:contentType"></element>
+	</sequence>
+</complexType>
+
+<complexType name="contentType" mixed="true">
+	<sequence>
+		<element name="exercises" type="tns:exercisesType"></element>
+		<element name="person" type="string"></element>
+	</sequence>
+</complexType>
+
+<complexType name="exercisesType">
+	<sequence>
+		<element name="exercise" minOccurs="1" maxOccurs="unbounded" type="tns:exerciseType"></element>
+	</sequence>
+</complexType>
+
+<complexType name="exerciseType">
+	<sequence>
+		<element name="topic" type="string"></element>
+		<element name="description" type="string"></element>
+	</sequence>
+</complexType>
+
+
+<simpleType name="email">
+   <restriction base="string">
+      <pattern value="[^@]+@[^\.]+\..+"/>
+   </restriction>
+</simpleType>
+
+
+<element name="xsdemail" type="tns:emailType" ></element>
+
+</schema>
+
+
+

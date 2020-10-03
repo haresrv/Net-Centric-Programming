@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE email SYSTEM "email.dtd">
+<email>
+	<from> abc@gmail.com </from>
+	<to> xyz@gmail.com </to>
+	<content>
+		<exercises>
+			<exercise>
+				<topic> DTD </topic>
+				<description> From Instance to DTD </description>
+			</exercise>
+			<exercise>
+				<topic> XSD</topic>
+				<description> From Instance to Schema</description>
+			</exercise>
+		</exercises>
+		Best Regards,
+		<person> ABC </person>
+	</content>
+</email>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/Bank" xmlns:tns="http://www.example.org/Bank" elementFormDefault="qualified">
+	
+
+<complexType name="bankType">
+	<sequence>
+		<element name="accounts" type="tns:acctType"></element>
+		<element name="customers" type="tns:custType"></element>
+		<element name="customer_accounts" type="tns:cust_acctsType"></element>
+	</sequence>
+</complexType>
+
+<complexType name="acctType">
+	<sequence>
+		<element name="savings_accounts" type="tns:saveaccsType"></element>
+		<element name="checking_accounts" type="tns:checkaccsType"></element>
+	</sequence>
+</complexType>
+
+<complexType name="saveaccsType">
+	<sequence>
+		<element name="savings_account" minOccurs="1" maxOccurs="unbounded"  type="tns:saveaccType"></element>
+	</sequence>
+</complexType>
+
+<complexType name="saveaccType">
+	<sequence>
+		<element name="balance" type="positiveInteger"></element>
+	</sequence>
+	<attribute name="id" type="string" use="required">
+	</attribute>
+	<attribute name="interest" type="decimal" use="required">
+	</attribute>
+</complexType>
+
+<complexType name="checkaccsType">
+	<sequence>
+		<element name="checking_account" minOccurs="1" maxOccurs="unbounded"  type="tns:checkaccType"></element>
+	</sequence>
+</complexType>
+
+<complexType name="checkaccType">
+	<sequence>
+		<element name="balance" type="int"></element>
+	</sequence>
+	<attribute name="id" type="string" use="required">
+	</attribute>
+</complexType>
+
+
+<complexType name="custType">
+	<sequence>
+		<element name="customer" minOccurs="1" maxOccurs="unbounded"  type="tns:customer_Type"></element>
+	</sequence>
+</complexType>
+
+
+<complexType name="customer_Type">
+	<sequence>
+		<element name="name" type="string"></element>
+		<element name="address" type="string"></element>
+	</sequence>
+	<attribute  name="id" type="string" use="required">
+	</attribute>
+</complexType>
+
+<complexType name="cust_acctsType">
+	<sequence>
+		<element name="customer_account" minOccurs="1" maxOccurs="unbounded"  type="tns:cust_acctType"></element>
+	</sequence>
+</complexType>
+
+<complexType name="cust_acctType">
+	<attribute name="c_id" type="string" use="required">
+	</attribute>
+	<attribute name="ac_id" type="string" use="required">
+	</attribute>
+</complexType>
+
+<element name="bank" type="tns:bankType"></element>
+
+</schema>

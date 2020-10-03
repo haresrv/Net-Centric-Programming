@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+ targetNamespace="http://www.example.org/studentreportXMLSchema" 
+ xmlns:tns="http://www.example.org/studentreportXMLSchema" 
+ elementFormDefault="qualified">
+
+<complexType name="studentType">
+	<sequence>
+		<element name="Name" type="string"></element>
+		<element name="id" type="string"></element>
+		<element name="study" type="tns:studyType"></element>
+	</sequence>
+</complexType>
+
+<complexType name="studyType">
+	<sequence>
+		<element name="courses" type="tns:coursesType"></element>
+	</sequence>
+	<attribute name="year" type="tns:year" use="required">
+	</attribute>
+</complexType>
+
+<complexType name="coursesType">
+	<sequence>
+		<element name="course" minOccurs="1" maxOccurs="unbounded" type="tns:courseType"></element>
+	</sequence>
+</complexType>
+
+<complexType name="courseType">
+	<sequence>
+		<element name="name" type="string"></element>
+		<element name="shortform" type="string"></element>
+		<element name="report" type="tns:reportType" minOccurs="0" maxOccurs="unbounded"></element>
+	</sequence>
+</complexType>
+
+<complexType name="reportType">
+	<choice>
+		<element name="grade" type="string"></element>
+		<element name="date" type="string"></element>
+	</choice>
+</complexType>
+
+<simpleType name="year">
+   <restriction base="int">
+      <pattern value="\d{4}"/>
+   </restriction>
+</simpleType>
+
+
+<element name="xsdstudent" type="tns:studentType" ></element>
+
+</schema>
+
+
